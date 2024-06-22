@@ -32,6 +32,7 @@ def main_loop():
         try:
             fetched_ids = get_property_ids()
             unseen_ids = fetched_ids - seen_ids
+            seen_ids.update(unseen_ids)
             if len(unseen_ids) > 0:
                 notify(unseen_ids)
 
